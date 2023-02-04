@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>汽车口碑智能分析系统 - 统计分析页</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
+
+    <!-- Echarts -->
+    <script src="/static/assets/js/echarts.min.js"></script>
+
+    <!-- Favicons -->
+    <link href="/static/assets/img/Liu_s.png" rel="icon" />
+    <link href="/static/assets/img/Liu_b.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="container">
+        <div class="logo float-left">
+          <h1 class="text-light">
+            <a href="temp.html"><span>汽车口碑智能分析系统</span></a>
+          </h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+          <ul>
+            <li><a href="/home">首页</a></li>
+            <li><a href="/text">文本分析</a></li>
+            <li class="active"><a href="/statistic">统计分析</a></li>
+            <li><a href="/test">在线测试</a></li>
+            <li><a href="/info">关于</a></li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= ECharts Section ======= -->
+      <section id="about" class="about">
+
+<!--      
+        <div class="section-title">
+            <p>&nbsp;</p>
+            <h2>图表统计分析</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-8 column">
+                <div id="sentiment" class="col-lg-6" style="width: 80%; height: 540px"></div>
+                <script type="text/javascript">
+                var chartDom = document.getElementById('sentiment');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                    tooltip: {
+                    trigger: 'item',
+                    },
+                    legend: {
+                    top: '5%',
+                    left: 'center',
+                    },
+                    series: [
+                    {
+                        name: '正负面统计',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2,
+                        },
+                        label: {
+                        show: false,
+                        position: 'center',
+                        },
+                        emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '40',
+                            fontWeight: 'bold',
+                        },
+                        },
+                        labelLine: {
+                        show: false,
+                        },
+                        data: [
+                        { value: {{ positive }}, name: '正面评价' },
+                        { value: {{ negative }}, name: '负面评价' },
+                        ],
+                    },
+                    ],
+                };
+
+                option && myChart.setOption(option);
+                //设置默认选中高亮部分
+                myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: 0});
+                // 当鼠标移入时，如果不是第一项，则把当前项置为选中，如果是第一项，则设置第一项为当前项
+                myChart.on('mouseover',function(e){
+                    myChart.dispatchAction({type: 'downplay',seriesIndex: 0,dataIndex:0});
+                    if(e.dataIndex != index){
+                    myChart.dispatchAction({type: 'downplay', seriesIndex: 0, dataIndex: index});
+                    }
+                    if(e.dataIndex == 0){
+                    myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex:e.dataIndex});
+                    }
+                });
+                //当鼠标离开时，把当前项置为选中
+                myChart.on('mouseout',function(e){
+                    index = e.dataIndex;
+                    myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: e.dataIndex});
+                });
+                </script>
+            </div>
+            <div class="col-md-2 column">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">品牌</h4>
+                    </div>
+                    <div class="panel-body">
+                        <select class='form-control' name="brand" id="brand">
+                            <option value="全部">全部</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">车型</h4>
+                    </div>
+                    <div class="panel-body">
+                        <select class='form-control' name="model" id="model">
+                            <option value="全部">全部</option>
+                        </select>
+                    </div>
+                </div>
+                <a type="button" class="btn btn-lg btn-block btn-primary" onclick="choose()">筛选</a>
+            </div>
+        </div>
+-->
+
+
+        <div class="container">
+          <div class="section-title">
+            <p>&nbsp;</p>
+            <h2>图表统计分析</h2>
+          </div>
+          <div class="row no-gutters">
+            <div id="sentiment" class="col-lg-6" style="width: 50%; height: 540px"></div>
+            <script type="text/javascript">
+               var chartDom = document.getElementById('sentiment');
+               var myChart = echarts.init(chartDom);
+               var option;
+
+               option = {
+                 tooltip: {
+                   trigger: 'item',
+                 },
+                 legend: {
+                   top: '5%',
+                   left: 'center',
+                 },
+                 series: [
+                   {
+                     name: '正负面统计',
+                     type: 'pie',
+                     radius: ['40%', '70%'],
+                     avoidLabelOverlap: false,
+                     itemStyle: {
+                       borderRadius: 10,
+                       borderColor: '#fff',
+                       borderWidth: 2,
+                     },
+                     label: {
+                       show: false,
+                       position: 'center',
+                     },
+                     emphasis: {
+                       label: {
+                         show: true,
+                         fontSize: '40',
+                         fontWeight: 'bold',
+                       },
+                     },
+                     labelLine: {
+                       show: false,
+                     },
+                     data: [
+                       { value: {{ positive }}, name: '正面评价' },
+                       { value: {{ negative }}, name: '负面评价' },
+                       { value: {{ neutral }}, name: '中性评价' },
+                     ],
+                   },
+                 ],
+               };
+
+               option && myChart.setOption(option);
+               //设置默认选中高亮部分
+               myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: 0});
+               // 当鼠标移入时，如果不是第一项，则把当前项置为选中，如果是第一项，则设置第一项为当前项
+               myChart.on('mouseover',function(e){
+                 myChart.dispatchAction({type: 'downplay',seriesIndex: 0,dataIndex:0});
+                 if(e.dataIndex != index){
+                   myChart.dispatchAction({type: 'downplay', seriesIndex: 0, dataIndex: index});
+                 }
+                 if(e.dataIndex == 0){
+                   myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex:e.dataIndex});
+                 }
+               });
+               //当鼠标离开时，把当前项置为选中
+              myChart.on('mouseout',function(e){
+                index = e.dataIndex;
+                myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: e.dataIndex});
+              });
+            </script>
+
+            <div id="car_class" class="col-lg-6" style="width: 50%; height: 540px"></div>
+            <script type="text/javascript">
+               var chartDom = document.getElementById('car_class');
+               var myChart = echarts.init(chartDom);
+               var option;
+               var n = 0;  //总数
+               var choosen_n = 0;
+               var choosen_data = [];
+               var all_data = [
+                       { value: {{ space }}, name: '空间' },
+                       { value: {{ power }}, name: '动力' },
+                       { value: {{ control }}, name: '操控' },
+                       { value: {{ consumption }}, name: '能耗' },
+                       { value: {{ comfort }}, name: '舒适性' },
+                       { value: {{ appearance }}, name: '外观' },
+                       { value: {{ interior }}, name: '内饰' },
+                       { value: {{ cost_performance }}, name: '性价比' },
+                       { value: {{ equipment }}, name: '配置' },
+                       { value: {{ duration }}, name: '续航' },
+                       { value: {{ safety }}, name: '安全性' },
+                       { value: {{ environmental }}, name: '环保' },
+                       { value: {{ quality }}, name: '质量与可靠性' },
+                       { value: {{ charge }}, name: '充电' },
+                       { value: {{ service }}, name: '服务' },
+                       { value: {{ car_brand }}, name: '品牌' },
+                       { value: {{ intelligent }}, name: '智能驾驶' }
+                       //{ value: {{ others }}, name: '其它' }
+                     ];
+                for(let i = 0; i < all_data.length; i++)
+                {
+                    let _value = all_data[i].value;
+                    let _name = all_data[i].name;
+                    n = n + _value;
+                    if(_value/n >= 0.02)
+                    {
+                        choosen_data.push({value:_value,name:_name});
+                        choosen_n = choosen_n + _value;
+                    }
+                }
+                choosen_data.push({ value: n-choosen_n, name: '其它' });
+
+               option = {
+                 tooltip: {
+                   trigger: 'item',
+                 },
+                 legend: {
+                   top: '5%',
+                   left: 'center',
+                 },
+                 series: [
+                   {
+                     name: '评论类别统计',
+                     type: 'pie',
+                     radius: ['40%', '70%'],
+                     avoidLabelOverlap: false,
+                     itemStyle: {
+                       borderRadius: 10,
+                       borderColor: '#fff',
+                       borderWidth: 2,
+                     },
+                     label: {
+                       show: false,
+                       position: 'center',
+                     },
+                     emphasis: {
+                       label: {
+                         show: true,
+                         fontSize: '40',
+                         fontWeight: 'bold',
+                       },
+                     },
+                     labelLine: {
+                       show: false,
+                     },
+                     data: choosen_data,
+                   },
+                 ],
+               };
+
+               option && myChart.setOption(option);
+               //设置默认选中高亮部分
+               myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: 0});
+               // 当鼠标移入时，如果不是第一项，则把当前项置为选中，如果是第一项，则设置第一项为当前项
+               myChart.on('mouseover',function(e){
+                 myChart.dispatchAction({type: 'downplay',seriesIndex: 0,dataIndex:0});
+                 if(e.dataIndex != index){
+                   myChart.dispatchAction({type: 'downplay', seriesIndex: 0, dataIndex: index});
+                 }
+                 if(e.dataIndex == 0){
+                   myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex:e.dataIndex});
+                 }
+               });
+
+              //当鼠标离开时，把当前项置为选中
+              myChart.on('mouseout',function(e){
+                index = e.dataIndex;
+                myChart.dispatchAction({type: 'highlight',seriesIndex: 0,dataIndex: e.dataIndex});
+              });
+            </script>
+          </div>
+
+          <div style="width: 100%;height: 100px;text-align:center; ">
+		    <h>品牌: </h>
+            <select name="brand" id="brand" style="width:100px;margin-right:30px" >
+			    <option value="全部">全部</option>
+                <option value="全部">奥迪</option>
+		    </select>
+
+            <h style="width:100px;margin-left:30px">车型: {{model}}</h>
+		    <select name="model" id="model" style="width:100px;margin-right:30px">
+			    <option value="全部">全部</option>
+                    {% for item in models %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+		    </select>
+		    <a type="button" class="btn btn-primary" style="width:100px;margin-left:30px;borderRadius:10px" onclick="choose()">筛选</a>
+	      </div>
+
+          
+        </div>
+
+      </section>
+      <!-- End ECharts Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= WordCloud Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-title">
+          <h2>关键词词云</h2>
+          <p>针对评论情感的正负面，以及不同类别生成词云。情感分为正面与负面；评论类别分为空间, 动力, 操控, 能耗, 舒适性, 外观, 内饰, 性价比， 配置, 续航, 安全性等十八类。</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">全部</li>
+              <li data-filter=".filter-sentiment">情感</li>
+              <li data-filter=".filter-class">类别</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sentiment">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_positive.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>正面</h4>
+                <p>情感</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_positive.png" data-gall="portfolioGallery" class="venobox" title="正面"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sentiment">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_negative.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>负面</h4>
+                <p>情感</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_negative.png" data-gall="portfolioGallery" class="venobox" title="负面"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sentiment">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_neutral.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>中性</h4>
+                <p>情感</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_neutral.png" data-gall="portfolioGallery" class="venobox" title="中性"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_space.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>空间</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_space.png" data-gall="portfolioGallery" class="venobox" title="空间"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_power.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>动力</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_power.png" data-gall="portfolioGallery" class="venobox" title="动力"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_control.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>操控</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_control.png" data-gall="portfolioGallery" class="venobox" title="操控"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_consumption.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>能耗</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_consumption.png" data-gall="portfolioGallery" class="venobox" title="能耗"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_comfort.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>舒适性</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_comfort.png" data-gall="portfolioGallery" class="venobox" title="舒适性"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_appearance.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>外观</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_appearance.png" data-gall="portfolioGallery" class="venobox" title="外观"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_interior.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>内饰</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_interior.png" data-gall="portfolioGallery" class="venobox" title="外观"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-class">
+            <div class="portfolio-wrap">
+              <img src="/static/assets/img/wc_cost_performance.png" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>性价比</h4>
+                <p>类别</p>
+                <div class="portfolio-links">
+                  <a href="/static/assets/img/wc_cost_performance.png" data-gall="portfolioGallery" class="venobox" title="性价比"><i class="icofont-eye"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End WordCloud Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Liu ChenLing</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- JS Files -->
+    <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+    <script src="/static/assets/js/extra_js.js"></script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>汽车口碑智能分析系统 - 首页</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/static/assets/img/Liu_s.png" rel="icon" />
+    <link href="/static/assets/img/Liu_b.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="container">
+        <div class="logo float-left">
+          <h1 class="text-light">
+            <a href="temp.html"><span>汽车口碑智能分析系统</span></a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="temp.html"><img src="static1/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+          <ul>
+            <li class="active">
+              <a href="/home">首页 <i class="la la-angle-down"></i></a>
+            </li>
+            <li><a href="/text">文本分析</a></li>
+            <li><a href="/statistic">统计分析</a></li>
+            <li><a href="/test">在线测试</a></li>
+            <li><a href="/info">关于</a></li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Introduction Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image: url('/static/assets/img/data.jpg')">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  <h2 class="animated fadeInDown">数据获取</h2>
+                  <p class="animated fadeInUp">本项目的数据均来源于“汽车之家”网址的口碑论坛。利用Python爬虫技术，通过selenium模块驱动浏览器，模拟人工操作，并借助“BeautifulSoup”工具包进行数据解析。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url('/static/assets/img/nlp.jpg')">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  <h2 class="animated fadeInDown">自然语言处理</h2>
+                  <p class="animated fadeInUp">
+                    本项目利用长短期记忆神经网络 (LSTM) 进行情感分析，情感极性包括正面、负面两类。评论的多标签分类则利用pytorch搭建了TextRCNN与TextCNN模型,
+                    并结合标签共现性与注意力机制进行改进，分为空间, 动力, 操控, 能耗, 舒适性, 外观, 内饰, 性价比， 配置, 续航, 安全性等十八类, 最总的输出为
+                    利用“投票机制”结合多个模型的综合结果。关键词提取使用了“jieba”工具包中的关键词提取工具，根据句子的长度不同分别利用TFIDF或者TextRank算法进行关键词提取。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url('/static/assets/img/chart.jpg')">
+              <div class="carousel-container">
+                <div class="carousel-content container">
+                  <h2 class="animated fadeInDown">图表可视化</h2>
+                  <p class="animated fadeInUp">情感极性与类别的数据展示借助了基于 JavaScript 的开源可视化图表库ECharts实现。词云则使用了“wordcloud”工具包实现。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= Basic Introduction Section ======= -->
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-title">
+            <h2>文本分析系统</h2>
+            <p>本系统通过Python爬虫获取数据，利用自然语言工具包进行文本分析，并提供了统计分析图标以及在线测试功能。</p>
+          </div>
+        </div>
+      </section>
+      <!-- End Our Team Section -->
+
+      <!-- ======= Counts Section ======= -->
+      <section class="counts section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
+              <a href="/text">
+                <div class="count-box">
+                  <i class="icofont-simple-smile" style="color: #20b38e"></i>
+                  <span>文本分析</span>
+                  <p>&nbsp;</p>
+                  <p>情感分析 文本分类 关键词提取</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+              <a href="/statistic">
+                <div class="count-box">
+                  <i class="icofont-document-folder" style="color: #c042ff"></i>
+                  <span>统计分析</span>
+                  <p>&nbsp;</p>
+                  <p>分类统计表 关键词词云</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+              <a href="/test">
+                <div class="count-box">
+                  <i class="icofont-live-support" style="color: #46d1ff"></i>
+                  <span>在线测试</span>
+                  <p>&nbsp;</p>
+                  <p>自然语言处理</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+              <a href="/info">
+                <div class="count-box">
+                  <i class="icofont-users-alt-5" style="color: #ffb459"></i>
+                  <span>关于</span>
+                  <p>&nbsp;</p>
+                  <p>项目介绍</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Counts Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Liu ChenLing</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- JS Files -->
+    <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+  </body>
+</html>

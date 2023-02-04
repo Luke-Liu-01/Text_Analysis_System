@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>汽车口碑智能分析系统 - 文本分析展示页</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/static/assets/img/Liu_s.png" rel="icon" />
+    <link href="/static/assets/img/Liu_b.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="container">
+        <div class="logo float-left">
+          <h1 class="text-light">
+            <a href="temp.html"><span>汽车口碑智能分析系统</span></a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="temp.html"><img src="static1/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+          <ul>
+            <li><a href="/home">首页</a></li>
+            <li class="active"><a href="/text">文本分析</a></li>
+            <li><a href="/statistic">统计分析</a></li>
+            <li><a href="/test">在线测试</a></li>
+            <li><a href="/info">关于</a></li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Basic Introduction Section ======= -->
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-title">
+            <h2>文本分析展示</h2>
+          </div>
+        </div>
+      </section>
+      <!-- End Our Team Section -->
+
+      <!-- ======= Text Display Section ======= -->
+      <section class="counts section-bg">
+        <div class="container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="10%">车系</th>
+                <th width="40%">评论</th>
+                <th width="10%">类别</th>
+                <th width="10%">正负面</th>
+                <th width="10%">关键词1</th>
+                <th width="10%">关键词2</th>
+                <th width="10%">关键词3</th>
+              </tr>
+            </thead>
+            {% for data in data_list %}
+            <tr>
+              <td width="10%">{{ data.car_series}}</td>
+              <td width="40%">{{ data.text}}</td>
+              <td width="10%">{{ data.car_class}}</td>
+              <td width="10%">{{ data.sentiment}}</td>
+              <td width="10%">{{ data.keyword1}}</td>
+              <td width="10%">{{ data.keyword2}}</td>
+              <td width="10%">{{ data.keyword3}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+
+          <div class="pagination-simple" align="center">
+            <!-- 如果当前页还有上一页，显示一个上一页的按钮 -->
+            {% if previous_page != cur_page %}
+            <a href="?page={{ previous_page }}">上一页</a>
+            {% endif %}
+            <!-- 显示当前页面信息 -->
+            <span class="current">第 {{ cur_page }} 页 / 共 {{ page_num }} 页</span>
+            <!-- 如果当前页还有下一页，显示一个下一页的按钮 -->
+            {% if next_page != cur_page %}
+            <a href="?page={{ next_page }}">下一页</a>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <!-- End Text Display Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Liu ChenLing</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- JS Files -->
+    <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+  </body>
+</html>
