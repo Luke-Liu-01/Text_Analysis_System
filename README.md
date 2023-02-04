@@ -13,7 +13,7 @@ This is my course project of ''Joint Project of Intelligent Application''. The s
 * data crawling: selenium
 * Machine Learning framework: 
   * multi-label classification(developed by me): Pytorch
-    * NN models: TextCNN, TextRCNN (more details is shown in [Multi-label Text Classification](https://github.com/Luke-Liu-01/Multi-label-Text-Classification))
+    * NN models: TextCNN, TextRCNN (more details are shown in [Multi-label Text Classification](https://github.com/Luke-Liu-01/Multi-label-Text-Classification))
     * other moudles: Initialization-based Methods, self-attention
   * sentiment analysis(developed by groupmate): Tensorflow
     * NN models: LSTM
@@ -24,7 +24,7 @@ This is my course project of ''Joint Project of Intelligent Application''. The s
   <div align='center'><img src="./data/screenshot/1.png" width="80%"></div>
 
     
-  * comments data and statistical information
+  * comment data and statistical information
     * comments data
   <div align='center'><img src="./data/screenshot/3.png" width="80%"></div>
     * label distribution
